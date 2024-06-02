@@ -114,5 +114,6 @@ return {
     keymap("n", "<leader>dc", "<Cmd>lua require('dapui').float_element('console', {enter=true, width=100})<CR>", opts)
     keymap("n", "<leader>db", "<Cmd>lua require('dapui').float_element('breakpoints', {enter=true})<CR>", opts)
     keymap("n", "<leader>dt", "<Cmd>lua require('dapui').float_element('stacks', {enter=true})<CR>", opts)
+    keymap("n", "<leader>dw", "<Cmd>lua require('dapui').float_element('watches', {enter=true})<CR>", opts)
   end
 }

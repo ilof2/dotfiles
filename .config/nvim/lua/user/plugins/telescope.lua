@@ -49,7 +49,7 @@ return {
             ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
             ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             ["<C-l>"] = actions.complete_tag,
-            ["<C-_>"] = actions.which_key,             -- keys from pressing <C-/>
+            ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
           },
 
           n = {
@@ -107,6 +107,8 @@ return {
         ".gradle/",
         ".idea/",
         "__pycache__/",
+        "venv/",
+        ".venv/",
         "build/",
         "gradle/",
         "node_modules/",
@@ -130,8 +132,7 @@ return {
         "%.zip",
         "%.7z",
         "%.tar",
-        "%.bz2",
-        "%.epub",
+        "%.bz2", "%.epub",
         "%.flac",
         "%.tar.gz",
       },
@@ -142,15 +143,6 @@ return {
           override_file_sorter = true,
           case_mode = 'smart_case'
         },
-        live_grep_args = {
-          auto_quoting = true,         -- enable/disable auto-quoting
-          mappings = {                 -- extend mappings
-            i = {
-              ["<C-k>"] = lga_actions.quote_prompt(),
-              ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-            },
-          },
-        }
       },
     }
   end,

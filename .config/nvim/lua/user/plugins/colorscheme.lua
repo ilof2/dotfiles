@@ -7,7 +7,6 @@
 --   },
 --   config = function()
 --     vim.opt.laststatus = 3 -- Or 3 for global statusline
---     vim.opt.statusline = " %f %m %= %l:%c ♥ "
 --     require("rose-pine").setup({
 --       variant = "moon",      -- auto, main, moon, or dawn
 --       dark_variant = "moon", -- main, moon, or dawn
@@ -26,6 +25,7 @@
 --         TelescopeSelection = { fg = "text", bg = "base" },
 --         --TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
 --         StatusLine = { fg = "love", bg = "love", blend = 10 },
+--         Constant = { fg = "love" },
 --         StatusLineNC = { fg = "subtle", bg = "surface" },
 --         debugPC = { bg = "gold", blend = 25},
 --         debugBreakpoint = {bg = "rose"},
@@ -72,5 +72,26 @@ return {
     })
     vim.cmd("colorscheme gruvbox")
   end,
-  opts = ...
 }
+-- TODO Create my own colorscheme
+--
+-- return {
+--   "aktersnurra/no-clown-fiesta.nvim",
+--   config = function ()
+--     require("no-clown-fiesta").setup({
+--     transparent = false, -- Enable this to disable the bg color
+--     styles = {
+--     -- You can set any of the style values specified for `:h nvim_set_hl`
+--     comments = {},
+--     functions = {},
+--     keywords = {},
+--     lsp = { underline = false },
+--     match_paren = {},
+--     type = { bold = true },
+--     variables = {},
+--   },
+-- })
+--   vim.cmd("colorscheme no-clown-fiesta")
+--   end
+-- }
+

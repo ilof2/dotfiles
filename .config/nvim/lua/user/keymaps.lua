@@ -57,24 +57,24 @@ map("n", "<leader>fj", ":cnext<cr>", opts)
 -- Save all files --
 map("n", "<leader>w", ":wa!<CR>", opts)
 
--- NeoTree --
-map("n", "<leader><tab>", ":Neotree toggle<cr>", opts)
-map("n", "<leader>f<tab>", ":Neotree reveal<cr>", opts)
-
 -- Telescope --
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
--- map("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>fl", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR><cr>", opts)
+map("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", opts)
 map("n", "<leader>fs", "<cmd>Telescope resume<cr>", opts)
 -- quick search selected word --
 map("v", "<leader>f", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", opts)
 
 -- show commits --
 map("n", "<leader>gb", "y<ESC>:Telescope git_branches<CR>", opts)
-
+map("n", "<leader>m", '<cmd>s/\\%V\\(.*\\)\\%V/"\\1"/<cr>', opts)
 map("n", "<leader>lo", ":Lspsaga outline<cr>", opts)
 map("n", "<leader>\\", ":Lspsaga term_toggle<cr>", opts)
+
+-- mini --
+map("n", "<leader>f<tab>", ':lua require("mini.files").open(vim.api.nvim_buf_get_name(0), true)<CR>', opts)
+map("n", "<leader><tab>", '::lua require("mini.files").open(vim.loop.cwd(), true)<CR>', opts)
 
 -- Nohl --
 map("n", "<leader>,", ":nohlsearch<CR>", opts)
 map("n", "<leader>u", ":UndotreeToggle<CR>", opts)
+map("n", "K", ":Lspsaga hover_doc", opts)

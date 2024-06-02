@@ -12,7 +12,7 @@ local options = {
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
-  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
+  showmode = true,                        -- we don't need to see things like -- INSERT -- anymore
   showtabline = 2,                         -- always show tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
@@ -41,12 +41,20 @@ local options = {
   sidescrolloff = 8,      -- minimal number of screen columns either side of cursor if wrap is `false`
   whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
   backspace = "indent,eol,start",
-  laststatus = 3
+  laststatus = 3,
+  spelllang = "en_US",
 }
+
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+-- netrw settings --
+vim.g.netrw_browse_split=4
+vim.g.netrw_banner=0
+vim.g.netrw_altv=1
+vim.g.netrw_liststyle=3
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.js", "*.html", "*.css", "*.lua" },
   callback = function()
@@ -61,3 +69,4 @@ vim.opt.shortmess:append "c"                          -- don't give |ins-complet
 vim.opt.iskeyword:append "-"                          -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" })       -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
+

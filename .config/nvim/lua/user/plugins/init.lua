@@ -7,5 +7,4 @@ return {
   -- "saadparwaiz1/cmp_luasnip"
 
   { "nvim-neotest/nvim-nio" },
-  'integralist/vim-mypy',
 }
