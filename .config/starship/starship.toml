@@ -1,0 +1,17 @@
+[git_branch]
+truncation_length = 10
+truncation_symbol = ''
+
+[hostname]
+ssh_only = true
+disabled = false
+
+[python]
+symbol = ' '
+
+[docker_context]
+disabled = true
+
+[directory]
+truncation_length = 8
+truncation_symbol = '../'

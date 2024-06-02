@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # fpath+=~/.zfunc
@@ -17,10 +10,14 @@ export LDFLAGS="-L/opt/homebrew/opt/node@18/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/node@18/include"
 export PATH=/opt/homebrew/opt/node@18/bin/:$PATH
 # ------
+# Zoxide
+export PATH="/Users/ilof/.local/bin:$PATH"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export MPV_HOME=/opt/homebrew/Cellar/mpv/
+export PATH=MPV_HOME:$PATH
 
 
 export MAGICK_HOME=/opt/homebrew/opt/imagemagick
@@ -51,7 +48,7 @@ BAT_THEME="gruvbox-dark"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -127,8 +124,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="nvim"
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias pact="source venv/bin/activate"
+alias uctags="/opt/homebrew/bin/ctags"
 eval "$(fzf --zsh)"
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
