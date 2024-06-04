@@ -42,7 +42,7 @@ return {
         },
         {
           elements = {
-            "repl",
+            -- "repl",
             "console",
           },
           width = 0.5,

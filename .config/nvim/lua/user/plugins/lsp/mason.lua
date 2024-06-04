@@ -3,6 +3,7 @@ return {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
   },
+  enabled = false,
   config = function()
     require('mason').setup({
       ensure_installed = {

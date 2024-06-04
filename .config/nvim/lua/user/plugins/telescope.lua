@@ -5,13 +5,11 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     "nvim-telescope/telescope-fzf-native.nvim",
-    "nvim-telescope/telescope-live-grep-args.nvim",
     build = "make"
   },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
-    local lga_actions = require("telescope-live-grep-args.actions")
 
     telescope.setup {
       defaults = {

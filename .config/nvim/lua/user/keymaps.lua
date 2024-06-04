@@ -37,10 +37,10 @@ map("n", "<leader>x", "<cmd>:close<cr>", opts)
 map("n", "<leader>qq", ":qall!<CR>", opts)
 
 -- Resize with arrows --
-map("n", "<S-Up>", ":resize -4<CR>", opts)
-map("n", "<S-Down>", ":resize +4<CR>", opts)
-map("n", "<S-Left>", ":vertical resize -4<CR>", opts)
-map("n", "<S-Right>", ":vertical resize +4<CR>", opts)
+map("n", "<A-k>", ":resize -4<CR>", opts)
+map("n", "<A-j>", ":resize +4<CR>", opts)
+map("n", "<A-h>", ":vertical resize -4<CR>", opts)
+map("n", "<A-l>", ":vertical resize +4<CR>", opts)
 --[[
 -- Same postition after J -- ]]
 map("n", "J", "mzJ`z", opts)

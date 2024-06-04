@@ -25,7 +25,7 @@
 --         TelescopeSelection = { fg = "text", bg = "base" },
 --         --TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
 --         StatusLine = { fg = "love", bg = "love", blend = 10 },
---         Constant = { fg = "love" },
+--         Constant = { fg = "love", sp = "love"},
 --         StatusLineNC = { fg = "subtle", bg = "surface" },
 --         debugPC = { bg = "gold", blend = 25},
 --         debugBreakpoint = {bg = "rose"},
@@ -41,57 +41,54 @@
 --   end
 -- }
 -- gruvbox --
+-- return {
+--   "ellisonleao/gruvbox.nvim",
+--   priority = 1000,
+--   lazy = false,
+--   config = function()
+--     require("gruvbox").setup({
+--       terminal_colors = true, -- add neovim terminal colors
+--       undercurl = true,
+--       underline = true,
+--       bold = true,
+--       italic = {
+--         strings = true,
+--         emphasis = true,
+--         comments = true,
+--         operators = false,
+--         folds = true,
+--       },
+--       strikethrough = true,
+--       invert_selection = false,
+--       invert_signs = false,
+--       invert_tabline = false,
+--       invert_intend_guides = false,
+--       inverse = true, -- invert background for search, diffs, statuslines and errors
+--       contrast = "soft", -- can be "hard", "soft" or empty string
+--       palette_overrides = {},
+--       overrides = {},
+--       dim_inactive = false,
+--       transparent_mode = true,
+--     })
+--     vim.cmd("colorscheme gruvbox")
+--   end,
+--
+-- }
+
 return {
-  "ellisonleao/gruvbox.nvim",
-  priority = 1000,
+  "neanias/everforest-nvim",
+  version = false,
   lazy = false,
+  priority = 1000, -- make sure to load this before all the other start plugins
+  -- Optional; default configuration will be used if setup isn't called.
   config = function()
-    require("gruvbox").setup({
-      terminal_colors = true, -- add neovim terminal colors
-      undercurl = true,
-      underline = true,
-      bold = true,
-      italic = {
-        strings = true,
-        emphasis = true,
-        comments = true,
-        operators = false,
-        folds = true,
-      },
-      strikethrough = true,
-      invert_selection = false,
-      invert_signs = false,
-      invert_tabline = false,
-      invert_intend_guides = false,
-      inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "soft", -- can be "hard", "soft" or empty string
-      palette_overrides = {},
-      overrides = {},
-      dim_inactive = false,
-      transparent_mode = true,
+    require("everforest").setup({
+      transparent_background_level = 1,
+      on_highlights = function(hl, palette)
+          hl.Constant = { fg = palette.orange, bg = palette.none, sp = palette.red }
+      end,
     })
-    vim.cmd("colorscheme gruvbox")
+    vim.cmd("colorscheme everforest")
   end,
 }
 -- TODO Create my own colorscheme
---
--- return {
---   "aktersnurra/no-clown-fiesta.nvim",
---   config = function ()
---     require("no-clown-fiesta").setup({
---     transparent = false, -- Enable this to disable the bg color
---     styles = {
---     -- You can set any of the style values specified for `:h nvim_set_hl`
---     comments = {},
---     functions = {},
---     keywords = {},
---     lsp = { underline = false },
---     match_paren = {},
---     type = { bold = true },
---     variables = {},
---   },
--- })
---   vim.cmd("colorscheme no-clown-fiesta")
---   end
--- }
-

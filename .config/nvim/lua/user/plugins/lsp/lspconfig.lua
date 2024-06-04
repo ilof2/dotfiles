@@ -53,5 +53,26 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
+
+
+    local setup_service = function(server_name)
+      local cmp_nvim_lsp = require("cmp_nvim_lsp")
+      local capabilities = cmp_nvim_lsp.default_capabilities()
+
+      -- change hover and help handlers on the same but with bordered window
+      local handlers = {
+        ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+        ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+      }
+      require('lspconfig')[server_name].setup({
+        capabilities = capabilities,
+        handlers = handlers
+      })
+    end
+
+    local servers = {"pyright", "html", "cssls", "tsserver", "eslint", "lua_ls"}
+    for _, lsp in ipairs(servers) do
+      setup_service(lsp)
+    end
   end,
 }
