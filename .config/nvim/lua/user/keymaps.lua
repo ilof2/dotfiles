@@ -60,6 +60,7 @@ map("n", "<leader>w", ":wa!<CR>", opts)
 -- Telescope --
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", opts)
 map("n", "<leader>fs", "<cmd>Telescope resume<cr>", opts)
 -- quick search selected word --
 map("v", "<leader>f", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", opts)
@@ -78,3 +79,7 @@ map("n", "<leader><tab>", '::lua require("mini.files").open(vim.loop.cwd(), true
 map("n", "<leader>,", ":nohlsearch<CR>", opts)
 map("n", "<leader>u", ":UndotreeToggle<CR>", opts)
 map("n", "K", ":Lspsaga hover_doc", opts)
+
+-- tabs --
+map("n", "<leader>tn", "<cmd>tabnext<cr>", opts)
+map("n", "<leader>tp", "<cmd>tabprev<cr>", opts)

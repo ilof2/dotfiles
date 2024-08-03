@@ -2,7 +2,8 @@ return {
   "rcarriga/nvim-dap-ui",
   dependencies = {
     "mfussenegger/nvim-dap",
-    "nvim-neotest/nvim-nio"
+    "nvim-neotest/nvim-nio",
+    "theHamsta/nvim-dap-virtual-text"
   },
   config = function()
     local dap = require("dap")
@@ -44,6 +45,7 @@ return {
           elements = {
             -- "repl",
             "console",
+            "watches",
           },
           width = 0.5,
           size = 0.25,           -- 25% of total lines
@@ -80,6 +82,8 @@ return {
         max_value_lines = 100,         -- Can be integer or nil.
       }
     })
+    require("nvim-dap-virtual-text").setup({})
+    vim.cmd("au FileType dap-repl lua require('dap.ext.autocompl').attach()")
 
     dap.listeners.before.attach.dapui_config = function()
       dapui.close({ layout = 2 })

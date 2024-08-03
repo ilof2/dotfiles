@@ -7,16 +7,23 @@ return {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "make"
   },
+  keys = {
+    {"<leader>fz", "<cmd>Telescope frecency workspace=CWD theme=ivy<cr>"}
+  },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
 
     telescope.setup {
       defaults = {
-
         prompt_prefix = "",
         selection_caret = " ",
-        path_display = { "smart" },
+        path_display = {
+          filename_first = {
+            reverse_directories = true
+          },
+          -- "smart"
+        },
 
         mappings = {
           i = {
@@ -105,6 +112,7 @@ return {
         ".gradle/",
         ".idea/",
         "__pycache__/",
+        "tags/",
         "venv/",
         ".venv/",
         "build/",

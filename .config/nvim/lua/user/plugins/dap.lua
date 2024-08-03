@@ -12,7 +12,7 @@ return {
         --dap_install.setup({
         --    installation_path = vim.fn.stdpath("data") .. "/dapinstall/"
         --})
-        require('dap.ext.vscode').load_launchjs(nil, {})
+        -- require('dap.ext.vscode').load_launchjs(nil, {})
         -- dap.adapters.python = {
         --   type = 'executable';
         --   command = 'python';

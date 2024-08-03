@@ -76,14 +76,23 @@ vim.opt.iskeyword:append "-"                          -- hyphenated words recogn
 vim.opt.formatoptions:remove({ "c", "r", "o" })       -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
+local function set_highlights()
+  vim.cmd("highlight WinSeparator ctermbg=none guifg=gray")
+end
+
 local function set_transparency()
-  vim.cmd("highlight TabLineFill ctermbg=none guibg=none")
-  vim.cmd("highlight StatusLine ctermbg=none guibg=none")
-  vim.cmd("highlight FloatBorder guibg=none ctermbg=none")
-  vim.cmd("highlight Normal guibg=none ctermbg=none")
-  vim.cmd("highlight NonText guibg=none ctermbg=none")
-  vim.cmd("highlight LineNr ctermbg=none guibg=none")
-  vim.cmd("highlight SignColumn ctermbg=none guibg=none")
+  -- vim.cmd("highlight TabLineFill ctermbg=none guibg=none")
+  -- vim.cmd("highlight StatusLine ctermbg=none guibg=none")
+  -- vim.cmd("highlight FloatBorder guibg=none ctermbg=none")
+  -- vim.cmd("highlight Normal guibg=none ctermbg=none")
+  -- vim.cmd("highlight NonText guibg=none ctermbg=none")
+  -- vim.cmd("highlight LineNr ctermbg=none guibg=none")
+  -- vim.cmd("highlight SignColumn ctermbg=none guibg=none")
+  -- vim.cmd("highlight FoldColumn ctermbg=none guibg=none")
+  -- vim.cmd("highlight GitSignsAdd ctermbg=none guibg=none")
+  -- vim.cmd("highlight GitSignsDelete ctermbg=none guibg=none")
+  -- vim.cmd("highlight GitSignsChange ctermbg=none guibg=none")
+  set_highlights()
   -- Add more highlight groups as needed
 end
 

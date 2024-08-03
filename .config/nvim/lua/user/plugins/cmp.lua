@@ -11,7 +11,7 @@ return {
     },
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
-    "onsails/lspkind.nvim",
+    "onsails/lspkind.nvim"
   },
   config = function()
     local kind_icons = {
@@ -70,7 +70,7 @@ return {
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<A-Space>"] = cmp.mapping(cmp.mapping.complete()),
-        ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ["<C-e>"] = cmp.mapping {
           i = cmp.mapping.abort(),
           c = cmp.mapping.close(),
@@ -125,7 +125,8 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "buffer" }
+        { name = "buffer" },
+        { name = "dap" }
       }),
       confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
