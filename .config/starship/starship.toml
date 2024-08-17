@@ -15,3 +15,6 @@ disabled = true
 [directory]
 truncation_length = 8
 truncation_symbol = '../'
+
+[battery]
+disabled = true
