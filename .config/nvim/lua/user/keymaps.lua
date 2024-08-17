@@ -68,8 +68,6 @@ map("v", "<leader>f", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", opts
 -- show commits --
 map("n", "<leader>gb", "y<ESC>:Telescope git_branches<CR>", opts)
 map("n", "<leader>m", '<cmd>s/\\%V\\(.*\\)\\%V/"\\1"/<cr>', opts)
-map("n", "<leader>lo", ":Lspsaga outline<cr>", opts)
-map("n", "<leader>\\", ":Lspsaga term_toggle<cr>", opts)
 
 -- mini --
 map("n", "<leader>f<tab>", ':lua require("mini.files").open(vim.api.nvim_buf_get_name(0), true)<CR>', opts)
@@ -78,7 +76,6 @@ map("n", "<leader><tab>", '::lua require("mini.files").open(vim.loop.cwd(), true
 -- Nohl --
 map("n", "<leader>,", ":nohlsearch<CR>", opts)
 map("n", "<leader>u", ":UndotreeToggle<CR>", opts)
-map("n", "K", ":Lspsaga hover_doc", opts)
 
 -- tabs --
 map("n", "<leader>tn", "<cmd>tabnext<cr>", opts)

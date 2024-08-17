@@ -13,7 +13,7 @@ local options = {
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
-  showmode = true,                        -- we don't need to see things like -- INSERT -- anymore
+  showmode = true,                         -- things like -- INSERT -- anymore
   showtabline = 2,                         -- always show tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
@@ -32,7 +32,7 @@ local options = {
   guicursor = "",
   autoindent = true,
   cursorline = false,     -- highlight the current line
-  number = true,          -- set numbered lines
+  number = false,         -- set numbered lines
   relativenumber = true,  -- set relative numbered lines
   numberwidth = 2,        -- set number column width to 2 {default 4}
   foldcolumn="1",
@@ -40,7 +40,7 @@ local options = {
   signcolumn = "yes",     -- always show the sign column, otherwise it would shift the text each time
   wrap = false,           -- display lines as one long line
   linebreak = true,       -- companion to wrap, don't split words
-  scrolloff = 3,         -- minimal number of screen lines to keep above and below the cursor
+  scrolloff = 3,          -- minimal number of screen lines to keep above and below the cursor
   sidescrolloff = 8,      -- minimal number of screen columns either side of cursor if wrap is `false`
   whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
   backspace = "indent,eol,start",
@@ -102,3 +102,5 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   callback = set_transparency,
 })
 
+-- highlight on yank
+vim.cmd("autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}")

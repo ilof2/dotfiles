@@ -127,6 +127,6 @@ alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias pact="source venv/bin/activate"
 alias uctags="/opt/homebrew/bin/ctags"
 eval "$(fzf --zsh)"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
+# export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

@@ -5,6 +5,26 @@ return {
     "nvim-neotest/nvim-nio",
     "theHamsta/nvim-dap-virtual-text"
   },
+  keys = {
+    -- movements --
+    {"<leader>e", "<Cmd>DapStepOver<CR>"},
+    {"<leader>s", "<Cmd>DapContinue<CR>"},
+    {"<leader>ew", "<Cmd>DapStepInto<CR>"},
+    {"<leader>eo", "<Cmd>DapStepOut<CR>"},
+    -- run / stop / launch_json --
+    {"<leader>d", "<Cmd>DapToggleBreakpoint<CR>"},
+    {"<leader>dx", "<Cmd>DapTerminate<CR>"},
+    {"<leader>ds", "<Cmd>DapLoadLaunchJSON<CR>"},
+    {"<leader>dt", "<Cmd>lua require('dapui').close()<CR>"},
+    {"<leader>di", "<Cmd>DapVirtualTextToggle<CR>"},
+    -- toggle windows --
+    {"<leader>dv", "<Cmd>lua require('dapui').float_element('scopes', {enter=true})<CR>"},
+    {"<leader>dr", "<Cmd>lua require('dap').repl.open({}, 'vsplit') <CR>"},
+    {"<leader>dc", "<Cmd>lua require('dapui').float_element('console', {enter=true, width=100})<CR>"},
+    {"<leader>db", "<Cmd>lua require('dapui').float_element('breakpoints', {enter=true})<CR>"},
+    {"<leader>dt", "<Cmd>lua require('dapui').float_element('stacks', {enter=true})<CR>"},
+    {"<leader>dw", "<Cmd>lua require('dapui').float_element('watches', {enter=true})<CR>"},
+  },
   config = function()
     local dap = require("dap")
     local dapui = require("dapui")
