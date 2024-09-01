@@ -1,6 +1,6 @@
 local options = {
   -- Leader remaps
-  bg="dark",
+  bg = "dark",
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
@@ -23,7 +23,7 @@ local options = {
   termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 300,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
-  undolevels=100,
+  undolevels = 100,
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
@@ -32,10 +32,10 @@ local options = {
   guicursor = "",
   autoindent = true,
   cursorline = false,     -- highlight the current line
-  number = false,         -- set numbered lines
-  relativenumber = true,  -- set relative numbered lines
-  numberwidth = 2,        -- set number column width to 2 {default 4}
-  foldcolumn="1",
+  number = false,        -- set numbered lines
+  relativenumber = true, -- set relative numbered lines
+  numberwidth = 2,       -- set number column width to 2 {default 4}
+  foldcolumn = "1",
 
   signcolumn = "yes",     -- always show the sign column, otherwise it would shift the text each time
   wrap = false,           -- display lines as one long line
@@ -56,10 +56,10 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 -- netrw settings --
-vim.g.netrw_browse_split=4
-vim.g.netrw_banner=0
-vim.g.netrw_altv=1
-vim.g.netrw_liststyle=3
+vim.g.netrw_browse_split = 4
+vim.g.netrw_banner = 0
+vim.g.netrw_altv = 1
+vim.g.netrw_liststyle = 3
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.js", "*.html", "*.css", "*.lua" },
@@ -103,4 +103,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 -- highlight on yank
-vim.cmd("autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}")
+vim.cmd( "autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}")
+vim.cmd("source lua/user/colors.lua")
+

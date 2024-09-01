@@ -70,9 +70,9 @@ return {
       })
     end
 
-    local servers = {"pyright", "html", "cssls", "tsserver", "eslint", "lua_ls", "gopls"}
-    for _, lsp in ipairs(servers) do
-      setup_service(lsp)
-    end
+    -- local servers = {"pyright", "html", "cssls", "tsserver", "eslint", "lua_ls", "gopls"}
+    -- for _, lsp in ipairs(servers) do
+    --   setup_service(lsp)
+    -- end
   end,
 }

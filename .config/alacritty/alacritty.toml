@@ -18,10 +18,3 @@ option_as_alt = "Both"
 normal.family = "Hack Nerd Font"
 size = 15
 
-
-[cursor]
-style.blinking = "On"
-blink_timeout = 0
-unfocused_hollow = true
-blink_interval = 500
-
