@@ -80,3 +80,12 @@ map("n", "<leader>u", ":UndotreeToggle<CR>", opts)
 -- tabs --
 map("n", "<leader>tn", "<cmd>tabnext<cr>", opts)
 map("n", "<leader>tp", "<cmd>tabprev<cr>", opts)
+
+map("n", "<leader>ll", "<cmd>lua vim.diagnostic.setqflist()<cr>", opts)
+
+map("n", "<leader>fr", "<Plug>CtrlSFPrompt", {noremap = true})
+map("v", "<leader>fr", "<Plug>CtrlSFVwordExec", opts)
+map("n", "<leader>\\", "<cmd>CtrlSFToggle<cr>", opts)
+
+--debug theme--
+-- map("n", "<C-e>", "<cmd>lua print(vim.inspect(vim.treesitter.get_captures_at_cursor(0)))<cr>", { noremap = true, silent = false })

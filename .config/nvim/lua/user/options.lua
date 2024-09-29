@@ -2,6 +2,8 @@ local options = {
   -- Leader remaps
   bg = "dark",
   backup = false,                          -- creates a backup file
+  ttyfast = true,
+  lazyredraw = true,
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -96,13 +98,20 @@ local function set_transparency()
   -- Add more highlight groups as needed
 end
 
+
 -- Apply transparency settings on colorscheme change
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = set_transparency,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "fugitive",
+  callback = function ()
+    vim.opt["colorcolumn"] = "0"
+  end
+})
+
 -- highlight on yank
 vim.cmd( "autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}")
-vim.cmd("source lua/user/colors.lua")
 

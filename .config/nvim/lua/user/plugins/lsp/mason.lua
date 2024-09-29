@@ -3,7 +3,7 @@ return {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
   },
-  enabled = true,
+  enabled = false,
   config = function()
     require('mason').setup({
       ensure_installed = {
@@ -16,7 +16,7 @@ return {
         "pyright",
         "html",
         "cssls",
-        "tsserver",
+        -- "ts_ls", -- Add later
         "eslint",
         "lua_ls",
       },
