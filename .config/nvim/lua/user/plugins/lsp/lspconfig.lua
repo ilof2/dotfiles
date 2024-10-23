@@ -28,7 +28,8 @@ return {
         vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', '<space>f', function()
-          vim.lsp.buf.format { async = true }
+          require("conform").format({ async = true })
+          -- vim.lsp.buf.format { async = true }
         end, opts)
       end
     })
@@ -70,7 +71,7 @@ return {
       })
     end
 
-    -- local servers = {"pyright", "html", "cssls", "tsserver", "eslint", "lua_ls", "gopls"}
+    -- local servers = {"pyright", "html", "cssls", "eslint", "lua_ls", "gopls"}
     -- for _, lsp in ipairs(servers) do
     --   setup_service(lsp)
     -- end

@@ -2,18 +2,23 @@ return {
   'williamboman/mason.nvim',
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
+    -- "microsoft/python-type-stubs",
   },
-  enabled = false,
+  enabled = true,
   config = function()
     require('mason').setup({
       ensure_installed = {
         "debugpy",
         "pyright"
-      }
+      },
+      ui = {
+        border = "single"
+      },
     })
     require('mason-lspconfig').setup({
       ensure_installed = {
         "pyright",
+        -- "jedi_language_server",
         "html",
         "cssls",
         -- "ts_ls", -- Add later
@@ -40,10 +45,49 @@ return {
             ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
             ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
           }
+          if server_name == "jedi_language_server" then
+            handlers = {
+              -- HACK: disabe hover and signature help from jedi
+              ['textDocument/signatureHelp'] = vim.lsp.with(function (_, _) return end, {}),
+              ['textDocument/hover'] = vim.lsp.with(function (_, _) return end, {})
+            }
+          end
+          if server_name == "harper_ls" then
+            print("asfasf")
+            require('lspconfig')[server_name].setup({
+              settings = {
+                ["harper-ls"] = {
+                  diagnosticSeverity = "hint", -- Can also be "information", "warning", or "error"
+                  userDictPath = "~/dict.txt",
+                  fileDictPath = "~/.harper/",
+                  linters = {
+                    spell_check = true,
+                    spelled_numbers = false,
+                    an_a = true,
+                    sentence_capitalization = true,
+                    unclosed_quotes = true,
+                    wrong_quotes = false,
+                    long_sentences = true,
+                    repeated_words = true,
+                    spaces = true,
+                    matcher = true,
+                    correct_number_suffix = true,
+                    number_suffix_capitalization = true,
+                    multiple_sequential_pronouns = true,
+                    linking_verbs = false,
+                    avoid_curses = true,
+                    terminating_conjunctions = true
+                  }
+                }
+
+              },
+            })
+          end
           require('lspconfig')[server_name].setup({
             capabilities=capabilities,
             handlers=handlers
           })
+
         end,
         -- lua_ls = function()
         --     local cmp_nvim_lsp = require("cmp_nvim_lsp")
