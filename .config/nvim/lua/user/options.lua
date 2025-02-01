@@ -26,7 +26,7 @@ local options = {
   timeoutlen = 300,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   undolevels = 100,
-  updatetime = 300,                        -- faster completion (4000ms default)
+  updatetime = 100,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 4,                          -- the number of spaces inserted for each indentation
@@ -48,7 +48,6 @@ local options = {
   backspace = "indent,eol,start",
   laststatus = 3,
   spelllang = "en_US",
-  tabline = "%#Added#%f",
   wildmenu = true,
   hidden = true,
 }
@@ -77,33 +76,6 @@ vim.opt.shortmess:append "c"                          -- don't give |ins-complet
 vim.opt.iskeyword:append "-"                          -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" })       -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
-
-local function set_highlights()
-  vim.cmd("highlight WinSeparator ctermbg=none guifg=gray")
-end
-
-local function set_transparency()
-  -- vim.cmd("highlight TabLineFill ctermbg=none guibg=none")
-  -- vim.cmd("highlight StatusLine ctermbg=none guibg=none")
-  -- vim.cmd("highlight FloatBorder guibg=none ctermbg=none")
-  -- vim.cmd("highlight Normal guibg=none ctermbg=none")
-  -- vim.cmd("highlight NonText guibg=none ctermbg=none")
-  -- vim.cmd("highlight LineNr ctermbg=none guibg=none")
-  -- vim.cmd("highlight SignColumn ctermbg=none guibg=none")
-  -- vim.cmd("highlight FoldColumn ctermbg=none guibg=none")
-  -- vim.cmd("highlight GitSignsAdd ctermbg=none guibg=none")
-  -- vim.cmd("highlight GitSignsDelete ctermbg=none guibg=none")
-  -- vim.cmd("highlight GitSignsChange ctermbg=none guibg=none")
-  set_highlights()
-  -- Add more highlight groups as needed
-end
-
-
--- Apply transparency settings on colorscheme change
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = set_transparency,
-})
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "fugitive",

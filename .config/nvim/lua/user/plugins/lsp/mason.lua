@@ -29,6 +29,7 @@ return {
         function(server_name)
           local cmp_nvim_lsp = require("cmp_nvim_lsp")
           local capabilities = cmp_nvim_lsp.default_capabilities()
+          -- local capabilities = require('blink.cmp').get_lsp_capabilities({})
 
           local border = {
             { '┌', 'FloatBorder' },
@@ -51,37 +52,6 @@ return {
               ['textDocument/signatureHelp'] = vim.lsp.with(function (_, _) return end, {}),
               ['textDocument/hover'] = vim.lsp.with(function (_, _) return end, {})
             }
-          end
-          if server_name == "harper_ls" then
-            print("asfasf")
-            require('lspconfig')[server_name].setup({
-              settings = {
-                ["harper-ls"] = {
-                  diagnosticSeverity = "hint", -- Can also be "information", "warning", or "error"
-                  userDictPath = "~/dict.txt",
-                  fileDictPath = "~/.harper/",
-                  linters = {
-                    spell_check = true,
-                    spelled_numbers = false,
-                    an_a = true,
-                    sentence_capitalization = true,
-                    unclosed_quotes = true,
-                    wrong_quotes = false,
-                    long_sentences = true,
-                    repeated_words = true,
-                    spaces = true,
-                    matcher = true,
-                    correct_number_suffix = true,
-                    number_suffix_capitalization = true,
-                    multiple_sequential_pronouns = true,
-                    linking_verbs = false,
-                    avoid_curses = true,
-                    terminating_conjunctions = true
-                  }
-                }
-
-              },
-            })
           end
           require('lspconfig')[server_name].setup({
             capabilities=capabilities,

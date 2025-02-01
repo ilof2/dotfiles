@@ -29,6 +29,10 @@ map("n", "<leader>sv", "<C-w>v", opts)
 map("n", "<leader>sh", "<C-w>s", opts)
 map("n", "<leader>se", "<C-w>=", opts)
 
+-- terminals --
+map("n", "<leader>v\\", ":vert term", {})
+map("n", "<leader>h\\", ":hor term", {})
+
 -- close buffers --
 map("n", "<leader>xa", "<cmd>:enew|bd#<cr>", opts)
 map("n", "<leader>x", "<cmd>:close<cr>", opts)
@@ -49,6 +53,8 @@ map("n", "J", "mzJ`z", opts)
 map("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
 map("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
 
+map("n", "<leader>aw", "gg<S-v>G", opts)
+
 
 -- Quick nav in Qlist --
 map("n", "<leader>fk", ":cprev<cr>", opts)
@@ -57,16 +63,6 @@ map("n", "<leader>fj", ":cnext<cr>", opts)
 -- Save all files --
 map("n", "<leader>w", ":wa!<CR>", opts)
 
--- Telescope --
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", opts)
-map("n", "<leader>fs", "<cmd>Telescope resume<cr>", opts)
--- quick search selected word --
-map("v", "<leader>f", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", opts)
-
--- show commits --
-map("n", "<leader>gb", "y<ESC>:Telescope git_branches<CR>", opts)
 map("n", "<leader>m", '<cmd>s/\\%V\\(.*\\)\\%V/"\\1"/<cr>', opts)
 
 -- mini --
@@ -85,7 +81,8 @@ map("n", "<leader>ll", "<cmd>lua vim.diagnostic.setqflist()<cr>", opts)
 
 map("n", "<leader>fr", "<Plug>CtrlSFPrompt", {noremap = true})
 map("v", "<leader>fr", "<Plug>CtrlSFVwordExec", opts)
-map("n", "<leader>\\", "<cmd>CtrlSFToggle<cr>", opts)
+map("n", "<leader>r\\", "<cmd>CtrlSFToggle<cr>", opts)
 
 --debug theme--
 -- map("n", "<C-e>", "<cmd>lua print(vim.inspect(vim.treesitter.get_captures_at_cursor(0)))<cr>", { noremap = true, silent = false })
+map("n", "<leader>rc", "<cmd>Lazy reload posterpole.nvim<cr>", opts)

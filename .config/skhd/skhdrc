@@ -1,12 +1,12 @@
-cmd + ctrl + alt - j : yabai -m window --focus south
-cmd + ctrl + alt - k : yabai -m window --focus north
-cmd + ctrl + alt - h : yabai -m window --focus west
-cmd + ctrl + alt - l : yabai -m window --focus east
+cmd + ctrl + alt + shift - j : yabai -m window --focus south
+cmd + ctrl + alt + shift - k : yabai -m window --focus north
+cmd + ctrl + alt + shift - h : yabai -m window --focus west
+cmd + ctrl + alt + shift - l : yabai -m window --focus east
 
-cmd + ctrl + alt - a : yabai -m display --focus west
-cmd + ctrl + alt - d : yabai -m display --focus east
-cmd + ctrl + alt - s : yabai -m display --focus south
-cmd + ctrl + alt - w : yabai -m display --focus north
+cmd + ctrl + alt + shift - a : yabai -m display --focus west
+cmd + ctrl + alt + shift - d : yabai -m display --focus east
+cmd + ctrl + alt + shift - s : yabai -m display --focus south
+cmd + ctrl + alt + shift - w : yabai -m display --focus north
 
 shift + cmd + ctrl + alt - r : yabai -m space --rotate 270
 shift + cmd + ctrl + alt - y : yabai -m space --mirror y-axis
@@ -14,23 +14,23 @@ shift + cmd + ctrl + alt - x : yabai -m space --mirror x-axis
 
 shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-cmd + ctrl + alt - m : yabai -m window --toggle zoom-fullscreen
-cmd + ctrl + alt - e : yabai -m space --balance
+shift + cmd + ctrl + alt - m : yabai -m window --toggle zoom-fullscreen
+shift + cmd + ctrl + alt - e : yabai -m space --balance
 
 shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
 shift + alt - h : yabai -m window --swap west
 shift + alt - l : yabai -m window --swap east
 
-shift + cmd + ctrl + alt - j : yabai -m window --warp south
-shift + cmd + ctrl + alt - k : yabai -m window --warp north
-shift + cmd + ctrl + alt - h : yabai -m window --warp west
-shift + cmd + ctrl + alt - l : yabai -m window --warp east
+shift + cmd + alt - j : yabai -m window --warp south
+shift + cmd + alt - k : yabai -m window --warp north
+shift + cmd + alt - h : yabai -m window --warp west
+shift + cmd + alt - l : yabai -m window --warp east
 
-shift + cmd + ctrl + alt - a: yabai -m window --display west; yabai -m display --focus west;
-shift + cmd + ctrl + alt - d: yabai -m window --display east; yabai -m display --focus east;
-shift + cmd + ctrl + alt - s: yabai -m window --display south; yabai -m display --focus south;
-shift + cmd + ctrl + alt - w: yabai -m window --display north; yabai -m display --focus north;
+shift + ctrl + alt - a: yabai -m window --display west; yabai -m display --focus west;
+shift + ctrl + alt - d: yabai -m window --display east; yabai -m display --focus east;
+shift + ctrl + alt - s: yabai -m window --display south; yabai -m display --focus south;
+shift + ctrl + alt - w: yabai -m window --display north; yabai -m display --focus north;
 
 shift + cmd + ctrl + alt - p: yabai -m window --space prev;
 shift + cmd + ctrl + alt - n: yabai -m window --space next;

@@ -24,5 +24,6 @@ return {
 
     -- Run tests debuger --
     {"<leader>rtb", "<Cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>"},
+    {"<leader>to", "<Cmd>Neotest output<CR>"},
   }
 }
