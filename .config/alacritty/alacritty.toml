@@ -1,6 +1,8 @@
+[general]
 import = [
-    "~/.config/alacritty/themes/themes/posterpole.toml"
+    "~/.config/alacritty/themes/posterpole.toml"
 ]
+
 [env]
 TERM = "xterm-256color"
 
