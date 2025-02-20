@@ -1,0 +1,12 @@
+font-family = Hack Nerd Font
+font-size = 14.5
+
+window-decoration = false
+font-thicken = true
+# custom-shader = /Users/ilof/projects/ghostty-shaders/tft.glsl
+# custom-shader-animation = true
+macos-icon-frame = chrome
+macos-icon = custom-style
+theme = posterpole
+background-opacity = 1
+background-blur = false
