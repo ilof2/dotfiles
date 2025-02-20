@@ -96,6 +96,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/projects/fzf-git.sh/fzf-git.sh
 
 # User configuration
 
@@ -130,3 +131,4 @@ eval "$(fzf --zsh)"
 # export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+fastfetch --logo ~/.config/fastfetch/logo.txt

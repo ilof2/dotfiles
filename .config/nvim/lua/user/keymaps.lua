@@ -45,8 +45,14 @@ map("n", "<A-k>", ":resize -4<CR>", opts)
 map("n", "<A-j>", ":resize +4<CR>", opts)
 map("n", "<A-h>", ":vertical resize -4<CR>", opts)
 map("n", "<A-l>", ":vertical resize +4<CR>", opts)
---[[
--- Same postition after J -- ]]
+
+-- PL layout fix in ghostty
+map("n", "Ż", ":resize +4<CR>", opts)
+map("n", "∆", ":resize -4<CR>", opts)
+map("n", "ķ", ":vertical resize -4<CR>", opts)
+map("n", "ł", ":vertical resize +4<CR>", opts)
+
+--[[ Same postition after J -- ]]
 map("n", "J", "mzJ`z", opts)
 
 -- Move selected lines up/down --

@@ -56,7 +56,7 @@ return {
             -- Elements can be strings or table with id and size keys.
             { id = "scopes", size = 0.25 },
             "breakpoints",
-            "stacks",
+            -- "stacks",
             "watches",
           },
           size = 40,           -- 40 columns
@@ -67,6 +67,7 @@ return {
             -- "repl",
             "console",
             "watches",
+            -- "stacks",
           },
           width = 0.5,
           size = 0.25,           -- 25% of total lines
