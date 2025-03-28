@@ -17,6 +17,8 @@ return {
     {"<leader>dx", "<Cmd>DapTerminate<CR>"},
     {"<leader>ds", "<Cmd>DapLoadLaunchJSON<CR>"},
     {"<leader>dt", "<Cmd>lua require('dapui').close()<CR>"},
+
+    {'<Leader>da', "<Cmd>lua require('dap').set_breakpoint(vim.fn.input('Condition: '), nil, nil)<CR>"},
     -- {"<leader>di", "<Cmd>DapVirtualTextToggle<CR>"},
     -- toggle windows --
     {"<leader>dv", "<Cmd>lua require('dapui').float_element('scopes', {enter=true})<CR>"},

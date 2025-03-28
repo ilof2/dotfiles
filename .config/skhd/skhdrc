@@ -12,9 +12,9 @@ shift + cmd + ctrl + alt - r : yabai -m space --rotate 270
 shift + cmd + ctrl + alt - y : yabai -m space --mirror y-axis
 shift + cmd + ctrl + alt - x : yabai -m space --mirror x-axis
 
-shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + cmd + ctrl + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-shift + cmd + ctrl + alt - m : yabai -m window --toggle zoom-fullscreen
+shift + cmd + ctrl + alt - f : yabai -m window --toggle zoom-fullscreen
 shift + cmd + ctrl + alt - e : yabai -m space --balance
 
 shift + alt - j : yabai -m window --swap south

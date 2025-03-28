@@ -62,6 +62,10 @@ vim.g.netrw_banner = 0
 vim.g.netrw_altv = 1
 vim.g.netrw_liststyle = 3
 
+--python adapter --
+vim.g.loaded_python3_provider = 0
+vim.g.python3_host_prog = ''
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.js", "*.html", "*.css", "*.lua" },
   callback = function()
@@ -76,6 +80,7 @@ vim.opt.shortmess:append "c"                          -- don't give |ins-complet
 vim.opt.iskeyword:append "-"                          -- hyphenated words recognized by searches
 vim.opt.winborder = "single"
 vim.opt.formatoptions:remove({ "c", "r", "o" })       -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
+vim.opt.winborder = "single"
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
 vim.api.nvim_create_autocmd("FileType", {
