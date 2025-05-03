@@ -2,22 +2,24 @@ return {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.6',
   lazy = false,
+  enabled = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "make"
   },
-  keys = {
-    { "<leader>ff", mode = { "n" }, "<cmd>Telescope find_files<cr>" },
-    { "<leader>fl", "<cmd>Telescope live_grep<cr>" },
-    { "<leader>fw", "<cmd>Telescope grep_string<cr>" },
-    { "<leader>fs", "<cmd>Telescope resume<cr>" },
-    -- quick search selected word --
-    { "<leader>f", mode = { "v" }, "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>" },
-
-    -- show commits --
-    { "<leader>gb", mode = { "n" }, "<cmd>Telescope git_branches<CR>" }
-  },
+  -- Trying fzf workflow
+  -- keys = {
+  --   { "<leader>ff", mode = { "n" }, "<cmd>Telescope find_files<cr>" },
+  --   { "<leader>fl", "<cmd>Telescope live_grep<cr>" },
+  --   { "<leader>fw", "<cmd>Telescope grep_string<cr>" },
+  --   { "<leader>fs", "<cmd>Telescope resume<cr>" },
+  --   -- quick search selected word --
+  --   { "<leader>f", mode = { "v" }, "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>" },
+  --
+  --   -- show commits --
+  --   { "<leader>gb", mode = { "n" }, "<cmd>Telescope git_branches<CR>" }
+  -- },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")

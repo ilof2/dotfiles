@@ -3,6 +3,7 @@ return {
   dependencies = {
     "mfussenegger/nvim-dap",
     "nvim-neotest/nvim-nio",
+    "ibhagwan/fzf-lua",
   },
   enabled = true,
   commit = "3e61767ccf56aa75adc2cb5390334cdb40b4ce05",
@@ -108,6 +109,18 @@ return {
         max_value_lines = 100,         -- Can be integer or nil.
       }
     })
+    local fzf = require("fzf-lua")
+    dap.defaults.fallback.picker = function(items, prompt, label_fn)
+      return fzf.fzf_exec(items, {
+        prompt = prompt .. '> ',
+        previewer = false,
+        actions = {
+          ['default'] = function(selected)
+            return selected[1]
+          end
+        }
+      })
+    end
     dap.listeners.before.attach.dapui_config = function()
       dapui.close({ layout = 2 })
       dapui.open({ layout = 2 })

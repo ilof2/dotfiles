@@ -31,6 +31,7 @@ map("n", "<leader>se", "<C-w>=", opts)
 -- terminals --
 map("n", "<leader>v\\", ":vert term", {})
 map("n", "<leader>h\\", ":hor term", {})
+map("t", "<ESC><ESC>", "<C-\\><C-n>", opts)
 
 -- close buffers --
 map("n", "<leader>xa", "<cmd>:enew|bd#<cr>", opts)
