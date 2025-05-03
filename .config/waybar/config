@@ -107,14 +107,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand", "custom/colorpicker","cpu","memory","custom/endpoint", "custom/nvidia"],
-        },
-        "custom/colorpicker": {
-            "return-type": "json",
-            "interval": "once",
-            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
-            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
-            "signal": 1
+            "modules": ["custom/expand","cpu","memory","custom/endpoint"],
         },
         "cpu": {
             "format": "{usage} 󰻠",
@@ -129,11 +122,6 @@
         },
         "pulseaudio": {
             "format": "{volume}  ",
-        },
-        "custom/nvidia": {
-            "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% | \\2°C/g'",
-            "format": "{}  ",
-            "interval": 2
         },
         "mpris": {
             "format": "{artist} - {title}",

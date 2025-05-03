@@ -94,9 +94,9 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
-source $HOME/projects/fzf-git.sh/fzf-git.sh
+# source $HOME/projects/fzf-git.sh/fzf-git.sh
 
 # User configuration
 
@@ -109,7 +109,7 @@ source $HOME/projects/fzf-git.sh/fzf-git.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -124,7 +124,7 @@ source $HOME/projects/fzf-git.sh/fzf-git.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="nvim"
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias pact="source venv/bin/activate"
 alias uctags="/opt/homebrew/bin/ctags"
 eval "$(fzf --zsh)"
@@ -132,3 +132,5 @@ eval "$(fzf --zsh)"
 # eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 fastfetch --logo ~/.config/fastfetch/logo.txt
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
