@@ -12,7 +12,7 @@ return {
 			posterpole.setup({
 				transparent = false,
 				colorless_bg = false,
-				dim_inactive = true,
+				dim_inactive = false,
 				selected_tab_highlight = false,
 				brightness = 0,
 				fg_saturation = 0,
@@ -30,7 +30,7 @@ return {
 					transparent = true,
 				},
 			})
-			vim.cmd("colorscheme posterpole-void")
+			vim.cmd("colorscheme posterpole")
 
       -- Start timer on config update
       posterpole.setup_adaptive()

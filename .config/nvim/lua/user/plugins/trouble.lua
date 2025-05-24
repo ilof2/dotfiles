@@ -1,6 +1,7 @@
 return {
   "folke/trouble.nvim",
   lazy = false,
+  enabled = false,
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
     require("trouble").setup {

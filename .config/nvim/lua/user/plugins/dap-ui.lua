@@ -28,6 +28,9 @@ return {
     {"<leader>db", "<Cmd>lua require('dapui').float_element('breakpoints', {enter=true})<CR>"},
     {"<leader>dt", "<Cmd>lua require('dapui').float_element('stacks', {enter=true})<CR>"},
     {"<leader>dw", "<Cmd>lua require('dapui').float_element('watches', {enter=true})<CR>"},
+
+    {"<leader>E", "<Cmd>lua require('dapui').eval(nil, {enter=true})<CR>"},
+    {"<leader>S", "<Cmd>lua require('dapui').run_to_cursor()<CR>"},
   },
   config = function()
     local dap = require("dap")
@@ -57,19 +60,18 @@ return {
         {
           elements = {
             -- Elements can be strings or table with id and size keys.
-            { id = "scopes", size = 0.25 },
             "breakpoints",
             -- "stacks",
             "watches",
           },
-          size = 40,           -- 40 columns
-          position = "left",
+          width = 0.5,
+          size = 30,           -- 40 columns
+          position = "right",
         },
         {
           elements = {
             -- "repl",
             "console",
-            "watches",
             -- "stacks",
           },
           width = 0.5,

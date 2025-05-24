@@ -3,7 +3,7 @@ local options = {
   bg = "dark",
   backup = false,                          -- creates a backup file
   ttyfast = true,
-  lazyredraw = true,
+  lazyredraw = false,
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -96,3 +96,30 @@ vim.cmd("autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
+vim.lsp.protocol.CompletionItemKind = {
+  " Text",
+  "󰅲 Method",
+  "ƒ Function",
+  " Constructor",
+  " Field",
+  " Variable",
+  " Class",
+  "ﰮ Interface",
+  " Module",
+  " Property",
+  " Unit",
+  " Value",
+  " Enum",
+  " Keyword",
+  "﬌ Snippet",
+  " Color",
+  " File",
+  " Folder",
+  " EnumMember",
+  " Constant",
+  " Struct",
+  " Event",
+  "ﬦ Operator",
+  " TypeParameter"
+}
+

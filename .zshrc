@@ -26,6 +26,7 @@ export PATH=$MAGICK_HOME/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -128,9 +129,21 @@ alias v="nvim"
 alias pact="source venv/bin/activate"
 alias uctags="/opt/homebrew/bin/ctags"
 eval "$(fzf --zsh)"
+
+eval "$(direnv hook zsh)"
 # export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-fastfetch --logo ~/.config/fastfetch/logo.txt
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+function ctrlz() {
+if [[ $#BUFFER == 0 ]]; then
+    fg >/dev/null 2>&1 && zle redisplay
+else
+    zle push-input
+fi
+}
+
+zle -N ctrlz
+bindkey '^Z' ctrlz
+
+fastfetch
