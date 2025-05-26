@@ -4,6 +4,9 @@ return {
 		lazy = false,
 		priority = 1000,
 		dir = "~/projects/posterpole.nvim",
+    keys = {
+      {"<leader>tt", "<cmd>PosterpoleToggleBG<cr>"}
+    },
 		-- branch = "master",
 		config = function()
 			local posterpole = require("posterpole")
