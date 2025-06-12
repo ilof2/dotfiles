@@ -26,3 +26,4 @@ require("lazy").setup({
     {import = "user.plugins.lsp"}
   }
 })
+vim.cmd("colorscheme posterpole")

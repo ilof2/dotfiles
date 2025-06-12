@@ -24,10 +24,10 @@ return {
     -- toggle windows --
     {"<leader>dv", "<Cmd>lua require('dapui').float_element('scopes', {enter=true})<CR>"},
     {"<leader>dr", "<Cmd>DapToggleRepl<CR>"},
-    {"<leader>dc", "<Cmd>lua require('dapui').float_element('console', {enter=true, width=100})<CR>"},
     {"<leader>db", "<Cmd>lua require('dapui').float_element('breakpoints', {enter=true})<CR>"},
     {"<leader>dt", "<Cmd>lua require('dapui').float_element('stacks', {enter=true})<CR>"},
-    {"<leader>dw", "<Cmd>lua require('dapui').float_element('watches', {enter=true})<CR>"},
+    {"<leader>dw", "<Cmd>lua require('dapui').toggle(1)<CR>"},
+    {"<leader>dc", "<Cmd>lua require('dapui').toggle(2)<CR>"},
 
     {"<leader>E", "<Cmd>lua require('dapui').eval(nil, {enter=true})<CR>"},
     {"<leader>S", "<Cmd>lua require('dapui').run_to_cursor()<CR>"},
