@@ -51,28 +51,8 @@
             "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
             "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
             "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-            "on-click-right": "blueman-manager",
+            "on-click-right": "blueman-manager"
         }, 
-        "battery": {
-            "interval":31,
-            "states": {
-                "good": 95,
-                "warning": 30,
-                "critical": 20
-            },
-            "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}% 󰂄",
-            "format-plugged": "{capacity}% 󰂄 ",
-            "format-alt": "{time} {icon}",
-            "format-icons": [
-                "󰁻",
-            "󰁼",
-            "󰁾",
-            "󰂀",
-            "󰂂",
-            "󰁹"
-            ],
-        },
         "custom/pacman": {
             "format": "󰅢  {}",
             "interval": 30,   
@@ -107,7 +87,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand","cpu","memory","custom/endpoint"],
+            "modules": ["custom/expand","cpu","memory","custom/endpoint"]
         },
         "cpu": {
             "format": "{usage} 󰻠",
@@ -121,9 +101,24 @@
             "spacing": 10
         },
         "pulseaudio": {
-            "format": "{volume}  ",
+            "format": "{volume} {icon}",
+            "on-click": "pavucontrol",
+            "icon": "  ",
+            "format-bluetooth": "{volume}% {icon}",
+            "format-icons": {
+                "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+                "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+                "headphone": "",
+                "hands-free": "",
+                "headset": "󰋎",
+                "phone": "",
+                "phone-muted": "",
+                "portable": "",
+                "car": "",
+                "default": ["", ""]
+            }
         },
         "mpris": {
-            "format": "{artist} - {title}",
+            "format": "{artist} - {title}"
         }
 } 

@@ -4,14 +4,14 @@ return {
 		lazy = false,
 		priority = 1000,
 		dir = "~/projects/posterpole.nvim",
-    keys = {
-      {"<leader>tt", "<cmd>PosterpoleToggleBG<cr>"}
-    },
+		keys = {
+			{ "<leader>tt", "<cmd>PosterpoleToggleBG<cr>" },
+		},
 		-- branch = "master",
 		config = function()
 			local posterpole = require("posterpole")
-      -- Use it if you want use built-in colors
-      -- local palette = vim.g.palette
+			-- Use it if you want use built-in colors
+			-- local palette = vim.g.palette
 			posterpole.setup({
 				transparent = false,
 				dim_inactive = false,
@@ -19,23 +19,24 @@ return {
 				brightness = 0,
 				fg_saturation = 0,
 				bg_saturation = 0,
-        adaptive_brightness = {
-          enabled = true,
-        },
+				adaptive_brightness = {
+					enabled = true,
+				},
 				custom_groups = {
 					posterpole = {
-            -- Comment = {fg = {hex = "#4C4C4C", cterm = 240}, bg = {hex = "#000FFF"}},
-            -- Comment = {fg = palette.colors.mainBlack, bg = nil},
-          },
+						-- Comment = {fg = {hex = "#4C4C4C", cterm = 240}, bg = {hex = "#000FFF"}},
+						-- Comment = {fg = palette.colors.mainBlack, bg = nil},
+					},
 				},
 				lualine = {
-					transparent = true,
+					transparent = false,
 				},
 			})
-			-- vim.cmd("colorscheme posterpole")
+			vim.g.colorscheme = "posterpole"
+			-- vim.cmd("colorscheme posterpole-void")
 
-      -- Start timer on config update
-      posterpole.setup_adaptive()
+			-- Start timer on config update
+			posterpole.setup_adaptive()
 		end,
-	}
+	},
 }

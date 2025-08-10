@@ -128,6 +128,15 @@ alias v="nvim"
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias pact="source venv/bin/activate"
 alias uctags="/opt/homebrew/bin/ctags"
+alias bdrop="blobdrop"
+
+# FZF
+export FZF_DEFAULT_OPTS=" \
+--color=fg:#C6C0B9,header:#A97070,info:#778C73,pointer:#A97070 \
+--color=marker:#6C7F93,prompt:#778C73,hl+:#CC9166 \
+--color=selected-bg:#4D4D4D \
+--color=border:#4D4D4D,label:#6C7F93"
+
 eval "$(fzf --zsh)"
 
 eval "$(direnv hook zsh)"
@@ -147,3 +156,5 @@ zle -N ctrlz
 bindkey '^Z' ctrlz
 
 fastfetch
+
+export PATH=$PATH:/home/ilof/.spicetify

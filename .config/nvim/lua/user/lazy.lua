@@ -26,4 +26,10 @@ require("lazy").setup({
     {import = "user.plugins.lsp"}
   }
 })
-vim.cmd("colorscheme posterpole")
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    vim.cmd("colorscheme " .. vim.g.colorscheme)
+  end,
+})

@@ -1,7 +1,7 @@
 #mpris.stopped, #mpris.paused, #mpris, #custom-nvidia, #pulseaudio, #cpu, #memory, #temperature, #battery, #network, #bluetooth {
   background-color: rgba(198, 192, 185, 0.1);
   border-radius: 10px;
-  padding: 0px 5px;
+  padding: 0px 7px;
   margin: 0px 5px;
 }
 
@@ -16,25 +16,23 @@ window#waybar {
 
 .modules-left {
   padding: 7px;
-  margin: 5 0 5 5;
-  border-radius: 10px;
-  background: rgba(37, 34, 42, 0.9);
+  margin: 5px 0px 5px 5px;
+  border-radius: 0px;
+  background: #141414;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 }
 
 .modules-center {
   padding: 7px;
   margin: 5px 0px 5px 0px;
-  border-radius: 10px;
-  background: rgba(37, 34, 42, 0.9);
+  background: #141414;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 }
 
 .modules-right {
   padding: 7px;
-  margin: 5px 5px 5px 0px;
-  border-radius: 10px;
-  background: rgba(37, 34, 42, 0.9);
+  margin: 6px 5px 5px 0px;
+  background: #141414;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 }
 

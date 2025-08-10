@@ -1,3 +1,4 @@
+
 return {
 	"ibhagwan/fzf-lua",
 	-- optional for icon support
@@ -35,8 +36,7 @@ return {
 			files = {
 				actions = {
 					["ctrl-h"] = actions.toggle_hidden,
-					["ctrl-i"] = actions.toggle_ignore,
-					["ctrl-q"] = actions.file_sel_to_qf,
+					["ctrl-i"] = actions.toggle_ignore
 				},
 				fd_opts = [[ --color=never --hidden --type f --type l --exclude .git --exclude venv/ --exclude .venv/ ]],
 				rg_opts = [[--color=never --hidden --files -g "!.git" -g "!venv" -g "!.venv"]],
