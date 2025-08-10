@@ -1,0 +1,10 @@
+[preview]
+wrap = "no"
+tab_size = 2
+image_quality = 90
+max_width = 1200
+max_height = 1000
+
+[[mgr.prepend_keymap]]
+on  = "y"
+run = [ 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ]
