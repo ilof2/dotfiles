@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window,calc,combi";
+    
     lines: 5;
     font: "JetBrainsMono Nerd Font 14";
     show-icons: true;
@@ -35,7 +35,7 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 360px;
+    height: 500px;
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
@@ -83,18 +83,18 @@ listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
     margin: 10px 0px 0px 20px;
-    columns: 2;
+    columns: 1;
     background-color: @bg-col;
 }
 
 element {
-    padding: 5px;
+    padding: 10px;
     background-color: @bg-col;
     text-color: @fg-col  ;
 }
 
 element-icon {
-    size: 25px;
+    size: 30px;
 }
 
 element selected {

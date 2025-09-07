@@ -58,6 +58,7 @@ return {
 			bashls = { "bash", "sh" },
 			rust_analyzer = { "rust" },
 			glsl_analyzer = { "glsl" },
+			hyprls = { "hyprlang" },
 		}
 		for lsp, filetypes in pairs(servers) do
 			setup_service(lsp, filetypes)

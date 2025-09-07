@@ -125,6 +125,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="nvim"
+alias open="xdg-open"
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias pact="source venv/bin/activate"
 alias uctags="/opt/homebrew/bin/ctags"

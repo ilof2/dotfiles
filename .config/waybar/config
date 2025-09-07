@@ -8,11 +8,18 @@
             "group/expand",
             "pulseaudio",
             "temperature",
+            "hyprland/language",
             "network",
             "battery",
             "bluetooth"
         ],
 
+        "hyprland/language": {
+            "format": "{}",
+            "format-pl": "PL",
+            "format-ru": "RU",
+            "keyboard-name": "zsa-technology-labs-moonlander-mark-i"
+        },
 
         "hyprland/workspaces": {
             "format": " ",
@@ -77,7 +84,7 @@
         "temperature": {
             "critical-threshold": 80,
             "format": "{temperatureC} ",
-            "hwmon-path": "/sys/devices/pci0000:00/0000:00:08.1/0000:0e:00.0/hwmon/hwmon5/temp1_input",
+            "hwmon-path": "/sys/class/hwmon/hwmon4/temp3_input",
             "tooltip": true
         },
         "group/expand": {

@@ -220,6 +220,15 @@ tooltip {
   color: #6C7F93;
 }
 
+#language {
+    border-radius: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #A97070;
+    font-size: 15px;
+    font-weight: 700;
+}
+
 #custom-nvidia {
   color: #778C73;
 }
