@@ -62,7 +62,7 @@ tooltip {
   padding: 0px 5px;
   color: #8EA4A2;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
   transition: all 0.3s ease;
 }
 
@@ -78,7 +78,7 @@ tooltip {
 
 #workspaces button {
   all: unset;
-  padding: 0px 6px;
+  padding: 0px 10px;
   margin: 0px 4px;
   color: rgba(198, 192, 185, 0);
   transition: all 0.2s ease;

@@ -3,7 +3,7 @@ return {
 		"ilof2/posterpole.nvim",
 		lazy = false,
 		priority = 1000,
-		dir = "~/projects/posterpole.nvim",
+		-- dir = "~/projects/posterpole.nvim",
 		keys = {
 			{ "<leader>tt", "<cmd>PosterpoleToggleBG<cr>" },
 		},

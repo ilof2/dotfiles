@@ -10,15 +10,15 @@
             "temperature",
             "hyprland/language",
             "network",
-            "battery",
-            "bluetooth"
+            "disk",
         ],
 
         "hyprland/language": {
             "format": "{}",
             "format-pl": "PL",
             "format-ru": "RU",
-            "keyboard-name": "zsa-technology-labs-moonlander-mark-i"
+            // "keyboard-name": "zsa-technology-labs-moonlander-mark-i",
+            "keyboard-name": "keychron-keychron-k1",
         },
 
         "hyprland/workspaces": {
@@ -99,6 +99,11 @@
         "cpu": {
             "format": "{usage} 󰻠",
             "tooltip": true
+        },
+        "disk": {
+            "interval": 30,
+            "format": "{free} remaining for Games",
+            "path": "/home/Games"
         },
         "memory": {
             "format": "{used}  "
