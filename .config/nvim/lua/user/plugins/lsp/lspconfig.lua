@@ -4,27 +4,17 @@ return {
 	lazy = false,
 	enabled = true,
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
-		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{
-			"folke/lazydev.nvim",
-			ft = "lua", -- only load on lua files
-			opts = {
-				library = {
-					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
-				},
-			},
-		},
-		-- 'saghen/blink.cmp',
+		-- "hrsh7th/cmp-nvim-lsp",
+	  'saghen/blink.cmp',
 	},
 	config = function(_, lsp_opts)
 		local setup_service = function(server_name, filetypes)
 			local original_capabilities = vim.lsp.protocol.make_client_capabilities()
-			-- local capabilities = require('blink.cmp').get_lsp_capabilities(original_capabilities)
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local capabilities = cmp_nvim_lsp.default_capabilities(original_capabilities)
+			local capabilities = require('blink.cmp').get_lsp_capabilities(original_capabilities)
+			-- local cmp_nvim_lsp = require("cmp_nvim_lsp")
+			-- local capabilities = cmp_nvim_lsp.default_capabilities(original_capabilities)
 			if server_name == "rust_analyzer" then
-				require("lspconfig")[server_name].setup({
+				vim.lsp.config(server_name, {
 					settings = {
 						["rust-analyzer"] = {
               cargo = { allFeatures = true},
@@ -38,7 +28,7 @@ return {
 				})
 				return
 			end
-			require("lspconfig")[server_name].setup({
+			vim.lsp.config(server_name, {
 				capabilities = capabilities,
 				filetypes = filetypes,
 				-- on_attach = function(client, bufnr)
@@ -62,6 +52,7 @@ return {
 		}
 		for lsp, filetypes in pairs(servers) do
 			setup_service(lsp, filetypes)
+      vim.lsp.enable(lsp)
 		end
 	end,
 }

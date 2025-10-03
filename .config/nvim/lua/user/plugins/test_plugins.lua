@@ -18,13 +18,13 @@ return {
       end
   },
 	{ "glacambre/firenvim", build = ":call firenvim#install(0)", enabled = false },
-	{
-		"2kabhishek/nerdy.nvim",
-		dependencies = {
-			"folke/snacks.nvim",
-		},
-		cmd = "Nerdy",
-	},
+	-- {
+	-- 	"2kabhishek/nerdy.nvim",
+	-- 	dependencies = {
+	-- 		"folke/snacks.nvim",
+	-- 	},
+	-- 	cmd = "Nerdy",
+	-- },
   {
     "uga-rosa/ccc.nvim",
     config = function ()

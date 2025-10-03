@@ -15,7 +15,7 @@ return {
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim"
   },
-  enabled = true,
+  enabled = false,
   config = function()
     local kind_icons = {
       Text = "",

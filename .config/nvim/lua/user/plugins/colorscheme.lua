@@ -33,7 +33,7 @@ return {
 				},
 			})
 			vim.g.colorscheme = "posterpole"
-			-- vim.cmd("colorscheme posterpole-void")
+			-- vim.cmd("colorscheme posterpole")
 
 			-- Start timer on config update
 			posterpole.setup_adaptive()

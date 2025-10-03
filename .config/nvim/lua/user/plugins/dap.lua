@@ -4,7 +4,7 @@ return {
 		"mfussenegger/nvim-dap-python",
 		--     "ravenxrz/DAPInstall.nvim"
 	},
-	commit = "665d3569a86395fe0dab85efbdb26d7d2ee57e49",
+	-- commit = "665d3569a86395fe0dab85efbdb26d7d2ee57e49",
 	config = function()
 		vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "Error", linehl = "", numhl = "" })
 		vim.fn.sign_define(
