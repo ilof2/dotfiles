@@ -2,6 +2,7 @@ return {
 	"saghen/blink.cmp",
 	lazy = false, -- lazy loading handled internally
 	enabled = true,
+	priority = 500,
 	-- optional: provides snippets for the snippet source
 	dependencies = "rafamadriz/friendly-snippets",
 
@@ -27,8 +28,8 @@ return {
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<enter>"] = { "select_and_accept", "fallback" },
 			["<tab>"] = { "select_and_accept", "fallback" },
-			["<C-e>"] = { "show", "hide"},
-			["<C-s>"] = { "hide_signature", "show_signature"},
+			["<C-e>"] = { "show", "hide" },
+			["<C-s>"] = { "hide_signature", "show_signature" },
 		},
 		-- signature_help = {
 		-- 	enabled = true,
@@ -48,21 +49,26 @@ return {
 		-- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 		-- adjusts spacing to ensure icons are aligned
 		appearance = {
+			use_nvim_cmp_as_default = false,
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 			-- Adjusts spacing to ensure icons are aligned
 			nerd_font_variant = "mono",
 		},
-    signature = {enabled = true},
+		signature = { enabled = true },
 
 		-- experimental auto-brackets support
 		-- accept = { auto_brackets = { enabled = true } }
 
 		-- experimental signature help support
-		completion = { documentation = { auto_show = true } },
+		completion = {
+			documentation = { auto_show = true },
+			menu = { draw = {
+				columns = {{"kind_icon", "label", "label_description", gap = 1 }, { "kind" }},
+			} },
+		},
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 	-- allows extending the enabled_providers array elsewhere in your config
 	-- without having to redefining it
-	opts_extend = { "sources.completion.enabled_providers", "sources.defuault"},
-
+	opts_extend = { "sources.completion.enabled_providers", "sources.defuault" },
 }
