@@ -5,7 +5,7 @@ window-decoration = false
 font-thicken = true
 
 # Animated cursor
-custom-shader = $HOME/.config/ghostty/shaders/cursor_smear_fade.glsl
+custom-shader = /Users/ilof/dotfiles/.config/ghostty/shaders/cursor_smear_fade.glsl
 custom-shader-animation = true
 macos-icon-frame = chrome
 macos-icon = custom-style

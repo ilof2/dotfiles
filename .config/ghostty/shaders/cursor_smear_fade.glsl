@@ -61,7 +61,7 @@ float ease(float x) {
 }
 
 const vec4 TRAIL_COLOR = vec4(0.68, 0.65, 0.61, 1.0);
-const float DURATION = 0.2; //IN SECONDS
+const float DURATION = 0.1; //IN SECONDS
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
@@ -105,7 +105,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
     // Blend trail with fade effect
     newColor = mix(newColor, fadedTrailColor, antialising(sdfTrail));
-    newColor = mix(newColor, vec4(0.13, 0.13, 0.15, 1.0), antialising(sdfTrail))
     // Draw current cursor
     newColor = mix(newColor, TRAIL_COLOR, antialising(sdfCurrentCursor));
     newColor = mix(newColor, fragColor, step(sdfCurrentCursor, 0.));
