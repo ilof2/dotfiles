@@ -14,3 +14,8 @@ post_hook = "pkill -SIGUSR2 waybar"
 output_path = '~/.config/tmux/plugins/tmux-posterpole/themes/matugen.conf'
 input_path = "~/.config/matugen/templates/tmux.conf"
 post_hook = "tmux source-file ~/.config/tmux/tmux.conf"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland-color.conf"
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
