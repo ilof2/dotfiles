@@ -53,7 +53,8 @@ wall_selection=$(find "${wall_dir}"  -maxdepth 1  -type f \( -iname "*.jpg" -o -
 
 # Set the wallpaper
 [[ -n "$wall_selection" ]] || exit 1
-killall mpvpaper
+pidof mpvpaper & killall mpvpaper
+matugen image ${wall_dir}/${wall_selection}
 swww img ${wall_dir}/${wall_selection} --transition-fps 144 --transition-duration 1 --transition-step 240 --transition-type wipe
 
 exit 0

@@ -16,12 +16,6 @@ return {
 				transparent = false,
 				dim_inactive = false,
 				selected_tab_highlight = false,
-				brightness = 0,
-				fg_saturation = 0,
-				bg_saturation = 0,
-				adaptive_brightness = {
-					enabled = true,
-				},
 				custom_groups = {
 					posterpole = {
 						-- Comment = {fg = {hex = "#4C4C4C", cterm = 240}, bg = {hex = "#000FFF"}},
@@ -33,10 +27,6 @@ return {
 				},
 			})
 			vim.g.colorscheme = "posterpole"
-			-- vim.cmd("colorscheme posterpole")
-
-			-- Start timer on config update
-			posterpole.setup_adaptive()
 		end,
 	},
 }

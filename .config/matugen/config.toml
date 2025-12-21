@@ -3,9 +3,14 @@
 [templates.kitty]
 output_path = '~/.config/kitty/themes/matugen.conf'
 input_path = "~/.config/matugen/templates/kitty-template.conf"
-post_hook = "kitty +kitten themes --reload-in=all matugen"
+post_hook = 'pkill -SIGUSR1 kitty'
 
 [templates.waybar]
 output_path = '~/.config/waybar/colors.css'
 input_path = "~/.config/matugen/templates/waybar-template.css"
 post_hook = "pkill -SIGUSR2 waybar"
+
+[templates.tmux]
+output_path = '~/.config/tmux/plugins/tmux-posterpole/themes/matugen.conf'
+input_path = "~/.config/matugen/templates/tmux.conf"
+# post_hook = ""
