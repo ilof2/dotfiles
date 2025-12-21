@@ -13,4 +13,4 @@ post_hook = "pkill -SIGUSR2 waybar"
 [templates.tmux]
 output_path = '~/.config/tmux/plugins/tmux-posterpole/themes/matugen.conf'
 input_path = "~/.config/matugen/templates/tmux.conf"
-# post_hook = ""
+post_hook = "tmux source-file ~/.config/tmux/tmux.conf"
