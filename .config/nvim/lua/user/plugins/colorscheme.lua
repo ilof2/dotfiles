@@ -13,7 +13,7 @@ return {
 			-- Use it if you want use built-in colors
 			-- local palette = vim.g.palette
 			posterpole.setup({
-				transparent = false,
+				transparent = true,
 				dim_inactive = false,
 				selected_tab_highlight = false,
 				custom_groups = {

@@ -38,7 +38,7 @@ map("n", "<leader>se", "<C-w>=", opts)
 -- terminals --
 map("n", "<leader>v\\", ":vert term", {})
 map("n", "<leader>h\\", ":hor term", {})
-map("t", "<ESC><ESC>", "<C-\\><C-n>", opts)
+map("t", "<ESC>`", "<C-\\><C-n>", opts)
 
 -- Quit --
 map("n", "<leader>qq", ":qall!<CR>", opts)

@@ -90,6 +90,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
+  callback = function()   pcall(vim.treesitter.start) end,
+})
+
 -- highlight on yank
 vim.cmd("autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}")
 
