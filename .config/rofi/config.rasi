@@ -27,7 +27,7 @@ configuration{
     kb-row-left: "Control+h";
     kb-row-right: "Control+l";
 }
- @theme "posterpole"
+ @theme "matugen"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;

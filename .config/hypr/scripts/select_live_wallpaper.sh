@@ -24,5 +24,5 @@ selected_wall=$(find "${WALLS_DIR}" -maxdepth 1  -type f \( -iname "*.mp4" \) -e
 
 [[ -n "$selected_wall" ]] || exit 1
 pidof mpvpaper && killall mpvpaper
-matugen image "${cacheDir}/${selected_wall}.jpg"
+matugen image "${cacheDir}/${selected_wall}.jpg" -t scheme-neutral --contrast -0.2 --source-color-index 1
 hyprctl dispatch exec $(mpvpaper -o "no-audio --loop" "*" ${WALLS_DIR}/${selected_wall}.mp4 > /dev/null 2>&1) &

@@ -17,6 +17,7 @@ return {
         vim.notify = require("notify")
       end
   },
+
 	{ "glacambre/firenvim", build = ":call firenvim#install(0)", enabled = false },
 	-- {
 	-- 	"2kabhishek/nerdy.nvim",
@@ -27,6 +28,7 @@ return {
 	-- },
   {
     "uga-rosa/ccc.nvim",
+    cmd="Ccc",
     config = function ()
       require("ccc").setup({})
     end

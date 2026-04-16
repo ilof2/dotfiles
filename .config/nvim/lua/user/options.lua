@@ -38,6 +38,7 @@ local options = {
   relativenumber = true, -- set relative numbered lines
   numberwidth = 2,       -- set number column width to 2 {default 4}
   foldcolumn = "1",
+  more = false,
 
   signcolumn = "yes",     -- always show the sign column, otherwise it would shift the text each time
   wrap = false,           -- display lines as one long line

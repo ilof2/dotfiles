@@ -5,6 +5,11 @@ output_path = '~/.config/kitty/themes/matugen.conf'
 input_path = "~/.config/matugen/templates/kitty-template.conf"
 post_hook = 'pkill -SIGUSR1 kitty'
 
+[templates.ghostty]
+input_path = "~/.config/matugen/templates/ghostty"
+output_path = '~/.config/ghostty/themes/matugen'
+post_hook = 'pkill -SIGUSR2 ghostty'
+
 [templates.waybar]
 output_path = '~/.config/waybar/colors.css'
 input_path = "~/.config/matugen/templates/waybar-template.css"
@@ -19,3 +24,20 @@ post_hook = "tmux source-file ~/.config/tmux/tmux.conf"
 input_path = "~/.config/matugen/templates/hyprland-color.conf"
 output_path = '~/.config/hypr/colors.conf'
 post_hook = 'hyprctl reload'
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi-conf.rasi"
+output_path = '~/.config/rofi/matugen.rasi'
+
+[templates.wlr-which-key]
+input_path = "~/.config/matugen/templates/wlr-which-key.yaml"
+output_path = '~/.config/wlr-which-key/config.yaml'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk3.css'
+output_path = '~/.themes/Matugen/gtk-3.0/gtk.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk4.css'
+output_path = '~/.themes/Matugen/gtk-4.0/gtk.css'

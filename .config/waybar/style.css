@@ -5,6 +5,8 @@
   margin: 0px 5px;
 }
 
+@import "colors.css";
+
 * {
   font-size: 15px;
   font-family: "JetBrains Mono Nerd Font";
@@ -21,19 +23,19 @@ window#waybar {
 .modules-left {
   margin: 5px 0px 5px 5px;
   border-radius: 0px;
-  background: #141414;
+  background: @background;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 }
 
 .modules-center {
   margin: 5px 0px 5px 0px;
-  background: #141414;
+  background: @background;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 }
 
 .modules-right {
   margin: 6px 5px 5px 0px;
-  background: #141414;
+  background: @background;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 }
 
@@ -44,24 +46,24 @@ window#waybar {
 }
 
 tooltip {
-  background: #25222A;
-  color: #CC9166;
+  background: @on_background;
+  color: @primary;
 }
 
 #clock:hover, #custom-pacman:hover, #custom-notification:hover, #bluetooth:hover, #network:hover, #battery:hover, #cpu:hover, #memory:hover, #temperature:hover {
   transition: all 0.3s ease;
-  color: #8A99A8;
+  color: @inverse_surface;
 }
 
 #custom-notification {
   padding: 0px 5px;
   transition: all 0.3s ease;
-  color: #778C73;
+  color: @primary;
 }
 
 #clock {
   padding: 0px 5px;
-  color: #8EA4A2;
+  color: @primary;
   font-weight: bold;
   font-size: 17px;
   transition: all 0.3s ease;
@@ -70,7 +72,7 @@ tooltip {
 #custom-pacman {
   padding: 0px 5px;
   transition: all 0.3s ease;
-  color: #CC9166;
+  color: @tertiary;
 }
 
 #workspaces {
@@ -88,7 +90,7 @@ tooltip {
 }
 
 #workspaces button:hover {
-  color: rgba(198, 192, 185, 0.5);
+  color: @inverse_surface;
   border: none;
   text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
@@ -97,7 +99,7 @@ tooltip {
 #workspaces button.active {
   border: none;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-  background-color: #6C7F93;
+  background-color: @tertiary;
   border-radius: 10px;
   padding: 0px 20px;
 }
@@ -107,11 +109,11 @@ tooltip {
   border: none;
   text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  background-color: #2C2C30;
+  background-color: @secondary_container;
 }
 
 #workspaces button.empty:hover {
-  color: rgba(0, 0, 0, 0);
+  color: @secondary_container;
   border: none;
   text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
   transition: all 1s ease;
@@ -120,7 +122,7 @@ tooltip {
 #workspaces button.empty.active {
   border: none;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-  background-color: #6C7F93;
+  background-color: @surface_container_high;
   border-radius: 10px;
   padding: 0px 20px;
 }
@@ -128,19 +130,19 @@ tooltip {
 #bluetooth {
   padding: 0px 5px;
   transition: all 0.3s ease;
-  color: #CC9166;
+  color: @primary;
 }
 
 #network {
   padding: 0px 5px;
   transition: all 0.3s ease;
-  color: #CC9166;
+  color: @tertiary;
 }
 
 #battery {
   padding: 0px 5px;
   transition: all 0.3s ease;
-  color: #CC9166;
+  color: @tertiary;
 }
 
 #battery.charging {
@@ -184,7 +186,7 @@ tooltip {
 #cpu, #memory, #temperature {
   padding: 0px 5px;
   transition: all 0.3s ease;
-  color: #CC9166;
+  color: @tertiary;
 }
 
 #custom-endpoint {
@@ -193,7 +195,7 @@ tooltip {
 }
 
 #custom-separator {
-  color: #C6C0B9;
+  color: @inverse_on_surface;
   padding: 0px 5px;
 }
 
@@ -213,37 +215,37 @@ tooltip {
 }
 
 #pulseaudio {
-  color: #A97070;
+  color: @primary;
   transition: all 0.3s ease;
 }
 
 #pulseaudio:hover {
-  color: #6C7F93;
+  color: @inverse_surface;
 }
 
 #language {
     border-radius: 0px;
     padding-left: 5px;
     padding-right: 5px;
-    color: #A97070;
+    color: @primary;
     font-size: 15px;
     font-weight: 700;
 }
 
 #custom-nvidia {
-  color: #778C73;
+  color: @primary;
 }
 
 #mpris {
-  color: #778C73;
+  color: @primary;
 }
 
 #mpris.paused {
-  color: #C6C0B9;
+  color: @primary_fixed;
 }
 
 #mpris.stopped {
-  color: #A97070;
+  color: @primary_fixed_dim;
 }
 
 /*# sourceMappingURL=style.css.map */

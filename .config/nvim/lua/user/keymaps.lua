@@ -77,7 +77,7 @@ map("n", "<leader>m", '<cmd>s/\\%V\\(.*\\)\\%V/"\\1"/<cr>', opts)
 
 -- Nohl --
 map("n", "<leader>,", ":nohlsearch<CR>", opts)
-map("n", "<leader>u", ":UndotreeToggle<CR>", opts)
+map("n", "<leader>u", ":Undotree<CR>", opts)
 
 -- tabs --
 map("n", "<leader>tn", "<cmd>tabnext<cr>", opts)

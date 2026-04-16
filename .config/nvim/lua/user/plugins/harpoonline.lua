@@ -3,6 +3,7 @@ return {
   dependencies = {
     "tpope/vim-fugitive"
   },
+  enabled = false,
   version = "*",
   config = function()
     local Harpoonline = require("harpoonline")

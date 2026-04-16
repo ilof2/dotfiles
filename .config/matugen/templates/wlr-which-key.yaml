@@ -1,0 +1,54 @@
+# Theming
+font: Hack Nerd Font 12
+background: "{{colors.surface.default.hex}}"
+color: "{{colors.on_surface.default.hex}}"
+border: "{{colors.primary.default.hex}}"
+separator: " ➜ "
+border_width: 1
+corner_r: 10
+padding: 15 # Defaults to corner_r
+rows_per_column: 5 # No limit by default
+column_padding: 25 # Defaults to padding
+
+# Anchor and margin
+anchor: right # One of center, left, right, top, bottom, bottom-left, top-left, etc.
+# Only relevant when anchor is not center
+margin_right: 0
+margin_bottom: 0
+margin_left: 0
+margin_top: 0
+
+# Permits key bindings that conflict with compositor key bindings.
+# Default is `false`.
+inhibit_compositor_keyboard_shortcuts: true
+
+# Try to guess the correct keyboard layout to use. Default is `false`.
+auto_kbd_layout: true
+
+menu:
+  - key: "w"
+    desc: Wallpaper
+    submenu:
+      - key: "l"
+        desc: Live
+        cmd: ~/.config/hypr/scripts/select_live_wallpaper.sh
+      - key: "s"
+        desc: Static
+        cmd: ~/.config/hypr/scripts/select_wallpaper.sh
+
+  - key: "p"
+    desc: Power
+    submenu:
+      - key: "s"
+        desc: Sleep
+        cmd: systemctl suspend
+      - key: "r"
+        desc: Reboot
+        cmd: reboot
+      - key: "o"
+        desc: Off
+        cmd: poweroff
+
+  - key: "c"
+    desc: Calculator
+    cmd: rofi -show calc
