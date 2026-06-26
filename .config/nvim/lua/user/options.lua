@@ -84,13 +84,6 @@ vim.opt.formatoptions:remove({ "c", "r", "o" })       -- don't insert the curren
 vim.opt.winborder = "single"
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "fugitive",
-  callback = function ()
-    vim.opt["colorcolumn"] = "0"
-  end
-})
-
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { '*' },
   callback = function()   pcall(vim.treesitter.start) end,
@@ -102,6 +95,7 @@ vim.cmd("autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
+
 vim.lsp.protocol.CompletionItemKind = {
   " Text",
   "󰅲 Method",

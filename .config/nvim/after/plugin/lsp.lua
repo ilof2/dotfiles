@@ -15,8 +15,35 @@ vim.diagnostic.config({
 	},
 })
 
+vim.lsp.protocol.CompletionItemKind = {
+  " Text",
+  "󰅲 Method",
+  "ƒ Function",
+  " Constructor",
+  " Field",
+  " Variable",
+  " Class",
+  "ﰮ Interface",
+  " Module",
+  " Property",
+  " Unit",
+  " Value",
+  " Enum",
+  " Keyword",
+  "﬌ Snippet",
+  " Color",
+  " File",
+  " Folder",
+  " EnumMember",
+  " Constant",
+  " Struct",
+  " Event",
+  "ﬦ Operator",
+  " TypeParameter"
+}
+
 vim.diagnostic.config({
-  virtual_text = true,
+	virtual_text = true,
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -28,13 +55,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 		vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
-		vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, opts)
+		vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
 		vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
 		vim.keymap.set("n", "<space>wl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 		end, opts)
-		vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+		vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)

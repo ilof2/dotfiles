@@ -39,7 +39,7 @@ return {
 		-- 	show_on_insert_on_trigger_character = true,
 		-- },
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer"},
 		},
 		-- windows = {
 		-- 	autocomplete = {

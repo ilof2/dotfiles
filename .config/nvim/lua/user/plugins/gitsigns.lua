@@ -2,14 +2,14 @@ return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
   opts = {
-    signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
+    signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
     numhl      = true,  -- Toggle with `:Gitsigns toggle_numhl`
     signs      = {
       add          = { text = '┃' },
       change       = { text = '┃' },
       delete       = { text = '_' },
       topdelete    = { text = '‾' },
-      changedelete = { text = '~' },
+      changedelete = { text = '┆' },
       untracked    = { text = '┆' },
     },
     on_attach  = function(bufnr)

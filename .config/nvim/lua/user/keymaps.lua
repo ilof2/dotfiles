@@ -2,7 +2,7 @@ local opts = { noremap = true, silent = true }
 
 
 -- Shorten function name
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 --Remap space as leader key
 map("", "<Space>", "<Nop>", opts)
@@ -56,7 +56,7 @@ map("n", "ķ", ":vertical resize -4<CR>", opts)
 map("n", "ł", ":vertical resize +4<CR>", opts)
 
 --[[ Same postition after J -- ]]
-map("n", "J", "mzJ`z", opts)
+-- map("n", "J", "mzJ`z", opts)
 
 -- Move selected lines up/down --
 map("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
@@ -66,8 +66,8 @@ map("n", "<leader>aw", "gg<S-v>G", opts)
 
 
 -- Quick nav in Qlist --
-map("n", "<leader>fk", ":cprev<cr>", opts)
-map("n", "<leader>fj", ":cnext<cr>", opts)
+map("n", "<leader>k", ":cprev<cr>", opts)
+map("n", "<leader>j", ":cnext<cr>", opts)
 
 map("i", "jk", "<esc>", opts)
 map("i", "kj", "<esc>", opts)
@@ -75,14 +75,13 @@ map("i", "kj", "<esc>", opts)
 -- Save all files --
 map("n", "<leader>w", ":wa!<CR>", opts)
 
-
 -- Nohl --
 map("n", "<leader>,", ":nohlsearch<CR>", opts)
 map("n", "<leader>u", ":Undotree<CR>", opts)
 
 -- tabs --
-map("n", "<leader>tn", "<cmd>tabnext<cr>", opts)
-map("n", "<leader>tp", "<cmd>tabprev<cr>", opts)
+map("n", "<leader>tj", "<cmd>tabnext<cr>", opts)
+map("n", "<leader>tk", "<cmd>tabprev<cr>", opts)
 
 map("n", "<leader>ll", "<cmd>lua vim.diagnostic.setqflist()<cr>", opts)
 
