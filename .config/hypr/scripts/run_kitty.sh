@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if hyprctl clients -j | jq -e '.[] | select(.title == "kitty-term")' > /dev/null; then
-    hyprctl dispatch focuswindow "title:kitty-term"
+if hyprctl clients -j | jq -e '.[] | select(.title == "term")' > /dev/null; then
+    hyprctl dispatch 'hl.dsp.focus({window = "title:term"})'
 else
-    kitty --title "kitty-term"
+    kitty --title "term"
 fi

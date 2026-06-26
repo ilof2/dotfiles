@@ -1,0 +1,21 @@
+
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("LC_MONETARY" , "pl_PL.UTF-8")
+hl.env("QT_QPA_PLATFORMTHEME","qt6ct")
+hl.env("QT_QPA_PLATFORM","wayland")
+hl.env("GTK_APPLICATION_PREFER_DARK_THEME","1")
+-- env = QT_STYLE_OVERRIDE,kvantum
+
+hl.env("XDG_SESSION_TYPE" , "wayland")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("XDG_CONFIG_HOME", "/home/ilof/.config")
+hl.env("GDK_SCALE", "1")
+hl.env("GTK_THEME", "Matugen")
+hl.env("EDITOR", "nvim")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("CLUTTER_BACKEND", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("TERMINAL", "kitty")
+hl.env("TERM", "xterm-kitty")
