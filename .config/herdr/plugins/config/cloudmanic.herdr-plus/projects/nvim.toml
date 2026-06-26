@@ -1,0 +1,11 @@
+name = "neovim config"
+description = "personal config"
+working_dir = "~/dotfiles/.config/nvim/"
+
+[[tabs]]
+name = "editor"
+command = "nvim" 
+
+[[tabs]]
+name = "opencode"
+command = "opencode" 
