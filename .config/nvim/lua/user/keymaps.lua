@@ -69,10 +69,11 @@ map("n", "<leader>aw", "gg<S-v>G", opts)
 map("n", "<leader>fk", ":cprev<cr>", opts)
 map("n", "<leader>fj", ":cnext<cr>", opts)
 
+map("i", "jk", "<esc>", opts)
+map("i", "kj", "<esc>", opts)
+
 -- Save all files --
 map("n", "<leader>w", ":wa!<CR>", opts)
-
-map("n", "<leader>m", '<cmd>s/\\%V\\(.*\\)\\%V/"\\1"/<cr>', opts)
 
 
 -- Nohl --

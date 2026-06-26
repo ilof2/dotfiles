@@ -2,21 +2,31 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		enabled = false,
+		enabled = true,
 		config = function()
 			require("lualine").setup({
 				options = {
 					theme = "posterpole",
 				},
+				sections = {
+					lualine_x = {
+						function()
+							return require("direnv").statusline()
+						end,
+						"encoding",
+						"fileformat",
+						"filetype",
+					},
+				},
 			})
 		end,
 	},
-  {
-			"rcarriga/nvim-notify",
-      config = function ()
-        vim.notify = require("notify")
-      end
-  },
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			vim.notify = require("notify")
+		end,
+	},
 
 	{ "glacambre/firenvim", build = ":call firenvim#install(0)", enabled = false },
 	-- {
@@ -26,11 +36,4 @@ return {
 	-- 	},
 	-- 	cmd = "Nerdy",
 	-- },
-  {
-    "uga-rosa/ccc.nvim",
-    cmd="Ccc",
-    config = function ()
-      require("ccc").setup({})
-    end
-  }
 }

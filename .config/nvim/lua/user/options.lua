@@ -97,7 +97,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- highlight on yank
-vim.cmd("autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}")
+vim.cmd("autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=200}")
 
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
@@ -129,3 +129,37 @@ vim.lsp.protocol.CompletionItemKind = {
   " TypeParameter"
 }
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function(args)
+    local ft = vim.bo[args.buf].filetype
+    if vim.treesitter.language.get_lang(ft) then
+      pcall(vim.treesitter.start, args.buf)
+    end
+  end,
+})
+
+-- -- experimental:
+-- require('vim._core.ui2').enable({
+--       enable = true, -- Whether to enable or disable the UI.
+--       msg = { -- Options related to the message module.
+--         ---@type 'cmd'|'msg' Default message target, either in the
+--         ---cmdline or in a separate ephemeral message window.
+--         ---@type string|table<string, 'cmd'|'msg'|'pager'> Default message target
+--         ---or table mapping |ui-messages| kinds and triggers to a target.
+--         targets = 'msg',
+--         cmd = { -- Options related to messages in the cmdline window.
+--           height = 0.5 -- Maximum height while expanded for messages beyond 'cmdheight'.
+--         },
+--         dialog = { -- Options related to dialog window.
+--           height = 0.5, -- Maximum height.
+--         },
+--         msg = { -- Options related to msg window.
+--           height = 0.5, -- Maximum height.
+--           timeout = 4000, -- Time a message is visible in the message window.
+--         },
+--         pager = { -- Options related to message window.
+--           height = 1, -- Maximum height.
+--         },
+--       },
+--     })

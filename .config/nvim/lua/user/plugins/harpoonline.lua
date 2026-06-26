@@ -28,7 +28,7 @@ return {
       local fileinfo = "%f " .. is_modified_color
       local curs_position = " %l:%c (%L) %#Removed#♥ %*"
       return table.concat({
-        branch_color, "%#Added#  ", "%=", fileinfo, "%#Added# ", harpoon_status(), "%=", curs_position
+        branch_color, "%#Added#  ", "%=", fileinfo, "%#Added# ", harpoon_status(),  "%=", curs_position
       })
     end
     vim.opt.statusline = statusline()

@@ -1,3 +1,10 @@
 *.log
 .config/herdr/session.json
 *.bak
+.config/tmux/plugins/*
+
+# Copilot shit
+.config/nvim/pack
+
+# Kitty current theme
+.config/kitty/current-theme.conf

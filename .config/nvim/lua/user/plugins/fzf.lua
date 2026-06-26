@@ -1,4 +1,3 @@
-
 return {
 	"ibhagwan/fzf-lua",
 	-- optional for icon support
@@ -7,9 +6,9 @@ return {
 	keys = {
 		{ "<leader>ff", mode = { "n" }, "<cmd>Fzf files<cr>" },
 		{ "<leader>fl", "<cmd>Fzf live_grep<cr>" },
-		{ "<leader>fw", "<cmd>Fzf grep_curbuf<cr>" },
+		{ "<leader>fg", "<cmd>Fzf grep_curbuf<cr>" },
+		{ "<leader>fw", "<cmd>Fzf git_worktrees<cr>" },
 		{ "<leader>fs", "<cmd>Fzf resume<cr>" },
-		{ "<leader>fg", "<cmd>Fzf live_grep_glob<cr>" },
 		{ "<leader>fh", "<cmd>Fzf helptags<cr>" },
 		{ "<leader>fd", "<cmd>Fzf lsp_document_diagnostics<cr>" },
 		{ "<leader>F", "<cmd>Fzf<cr>" },
@@ -36,11 +35,37 @@ return {
 			files = {
 				actions = {
 					["ctrl-h"] = actions.toggle_hidden,
-					["ctrl-i"] = actions.toggle_ignore
+					["ctrl-i"] = actions.toggle_ignore,
 				},
 				fd_opts = [[ --color=never --hidden --type f --type l --exclude .git --exclude venv/ --exclude .venv/ ]],
 				rg_opts = [[--color=never --hidden --files -g "!.git" -g "!venv" -g "!.venv"]],
 			},
+      git = {
+        worktrees = {
+          actions = {
+            ["default"] = function(selected, opts)
+              local old_path = opts.__CTX.bname
+
+              -- make it relative to old cwd
+              local relpath = vim.fn.fnamemodify(old_path, ":.")
+
+              -- switch worktree (this changes cwd)
+              actions.git_worktree_cd(selected, opts)
+
+              vim.schedule(function()
+                -- new absolute path in new worktree
+                local new_path = vim.fn.fnamemodify(relpath, ":p")
+                if vim.fn.filereadable(new_path) == 1 then
+                  vim.cmd("edit " .. vim.fn.fnameescape(new_path))
+                else
+                  vim.notify("File not found in new worktree: " .. relpath, vim.log.levels.WARN)
+                  vim.cmd("bufdo bd")
+                end
+              end)
+            end,
+          },
+        },
+      }
 		})
 	end,
 }

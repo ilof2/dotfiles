@@ -5,7 +5,7 @@ return {
     "nvim-neotest/nvim-nio",
     "ibhagwan/fzf-lua",
   },
-  enabled = true,
+  enabled = false,
   commit = "3e61767ccf56aa75adc2cb5390334cdb40b4ce05",
   keys = {
     -- movements --
